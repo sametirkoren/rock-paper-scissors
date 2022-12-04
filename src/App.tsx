@@ -65,7 +65,7 @@ function App() {
       <Card headStyle={{textAlign:"center", background: "#0d2245", color: "white"}} bodyStyle={{textAlign:"center"}} title="Skor" style={{ width: "100%",border:"1px solid" }}>
       <p>Oyuncu: {userPoints}</p>
       <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-        <div style={{width:"50%", height: "150px", display:"flex", justifyContent:"center", alignItems:"center"}}>
+        <div style={{width:"50%", height: "inherit", display:"flex", justifyContent:"center", alignItems:"center"}}>
           {userChoice.component}
         </div>
       </div>
@@ -75,7 +75,7 @@ function App() {
       <Card headStyle={{textAlign:"center",  background: "#0d2245", color: "white"}} bodyStyle={{textAlign:"center"}} title="Skor" style={{ width: "100%", border:"1px solid" }}>
       <p>Bilgisayar: {computerPoints}</p>
       <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-        <div style={{width:"50%", height: "150px", display:"flex", justifyContent:"center", alignItems:"center"}}>
+        <div style={{width:"50%", height: "inherit", display:"flex", justifyContent:"center", alignItems:"center"}}>
          {computerChoice.component}
         </div>
       </div>
@@ -103,7 +103,7 @@ function App() {
       </div>
 
       <div style={{position: "absolute", top:"25%", left:"50%", transform: "translate(-50%, -25%)"}}>
-          {gameOver &&<Button type="primary" onClick={() => reset()}>Reset</Button>}
+          {gameOver &&<Button type="primary" onClick={() => reset()}>Yeniden Başlat</Button>}
       </div>
     </div>
   
