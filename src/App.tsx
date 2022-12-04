@@ -73,7 +73,7 @@ function App() {
       </Col>
       <Col className="gutter-row" span={8}>
       <Card headStyle={{textAlign:"center",  background: "#0d2245", color: "white"}} bodyStyle={{textAlign:"center"}} title="Skor" style={{ width: "100%", border:"1px solid" }}>
-      <p>Bilgisayar: {computerPoints}</p>
+      <p>Com: {computerPoints}</p>
       <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
         <div style={{width:"50%", height: "inherit", display:"flex", justifyContent:"center", alignItems:"center"}}>
          {computerChoice.component}
