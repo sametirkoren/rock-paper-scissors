@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row, Button, Space } from 'antd';
+import { Card, Col, Row, Button, Space, Alert } from 'antd';
 import {FaRegHandScissors, FaRegHandPaper, FaRegHandRock} from 'react-icons/fa';
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
   return (
     <div style={{width: "100%", height:"100vh", overflow: 'hidden', position:"relative"}}>
         <Row style={{ display: "flex", justifyContent:"center", alignItems:"center", height: "inherit"}} gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-      <Col className="gutter-row" span={6}>
+      <Col className="gutter-row" span={8}>
       <Card headStyle={{textAlign:"center", background: "#0d2245", color: "white"}} bodyStyle={{textAlign:"center"}} title="Skor" style={{ width: "100%",border:"1px solid" }}>
       <p>Oyuncu: {userPoints}</p>
       <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
@@ -71,7 +71,7 @@ function App() {
       </div>
     </Card>
       </Col>
-      <Col className="gutter-row" span={6}>
+      <Col className="gutter-row" span={8}>
       <Card headStyle={{textAlign:"center",  background: "#0d2245", color: "white"}} bodyStyle={{textAlign:"center"}} title="Skor" style={{ width: "100%", border:"1px solid" }}>
       <p>Bilgisayar: {computerPoints}</p>
       <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
@@ -97,12 +97,12 @@ function App() {
     
 
       </div>
-      <div style={{position: "absolute", top:"20%", left:"50%", transform: "translate(-50%, -20%)"}}>
-            <div>Tur Sonucu: {turnResult}</div>
-            {result !== "" && <div>Final Sonucu: {result}</div>} 
+      <div style={{position: "absolute", top:"20%", left:"50%", transform: "translate(-50%, -20%)", display: "flex", flexDirection: "column", justifyContent:"center", alignItems:"center"}}>
+      <Alert style={{marginBottom: "20px"}} message={`Tur Sonucu: ${turnResult}`} type="success" />
+            {result !== "" &&     <Alert message={`Final Sonucu: ${result}`} type="error" />} 
       </div>
 
-      <div style={{position: "absolute", top:"25%", left:"50%", transform: "translate(-50%, -25%)"}}>
+      <div style={{position: "absolute", bottom:"10%", left:"50%", transform: "translate(-50%, -10%)"}}>
           {gameOver &&<Button type="primary" onClick={() => reset()}>Yeniden Başlat</Button>}
       </div>
     </div>
